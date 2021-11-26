@@ -1,7 +1,8 @@
-var express = require('express');
+const express = require('express');
+const msg = require('./mod_test');
 // var bootstrap = require('bootstrap');
 // import bootstrap from '/bootstrap/dist/css/bootstrap.min.css'
-var app = express();
+const app = express();
 
 app.set('view engine', 'ejs');
 
@@ -18,5 +19,5 @@ app.get('/tech', function(req, res) {
 })
 
 app.listen(3000, function() {
-    console.log("UEPA")
+    console.log(msg)
 })
