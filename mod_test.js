@@ -1,3 +1,4 @@
-var msg = "Este modulo contem apenas uma string"
-
-module.exports = msg;
+module.exports = function() {
+    var msg = "Mensagem do mod_test";
+    return msg;
+}

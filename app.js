@@ -1,23 +1,10 @@
-const express = require('express');
-const msg = require('./mod_test');
-// var bootstrap = require('bootstrap');
-// import bootstrap from '/bootstrap/dist/css/bootstrap.min.css'
-const app = express();
+const express = require('./config/server.js');
 
-app.set('view engine', 'ejs');
-
-app.get('/', function(req, res) {
-    res.render("home/index");
-})
-
-app.get('/admin', function(req, res) {
-    res.render("admin/form_add_noticias");
-})
-
-app.get('/tech', function(req, res) {
-    res.render("noticias/tech");
-})
+var rota_home = require('./app/routes/home')(app)
+var rota_noticias = require('./app/routes/noticias')(app)
+var rota_admin = require('./app/routes/form_inclusao_noticia')(app)
+var rota_treino = require('./app/routes/treino')(app)
 
 app.listen(3000, function() {
-    console.log(msg)
+    console.log("Server ON")
 })
