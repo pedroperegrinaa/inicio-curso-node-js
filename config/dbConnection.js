@@ -1,10 +1,15 @@
 const mysql = require('mysql');
 
-module.exports = function() {
+const connMySQL = function() {
+    console.log("CONEXAO ESTABELECIDA")
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: '',
         database: 'cadastro'
     });
+}
+
+module.exports = function() {
+    return connMySQL;
 }
