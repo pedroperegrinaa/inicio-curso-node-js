@@ -8,7 +8,7 @@ var server = http.createServer(
         if (categoria == "/moda") {
             res.end("<html><body> Portal de noda </body></html>");
         } else {
-            res.end("<html><body> Não tem nada aqui </body></html>");
+            res.end("<html><body> Não tem nada aqui, serio </body></html>");
         }
 
 
