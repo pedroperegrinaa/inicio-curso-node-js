@@ -11,25 +11,11 @@ module.exports = function(app) {
         // res.send(noticias)
 
         var connection = app.config.dbConnection();
-        var noticiasModel = app.app.models.noticiasModel;
+        var noticiasDAO = new app.app.models.noticiasDAO(connection);
 
-        noticiasModel.salvarNoticia(noticia, connection, function(error, result) {
+        noticiasDAO.salvarNoticia(noticia, function(error, result) {
             // res.render("noticia/noticias")
             res.redirect('/noticias')
         })
     })
-
-    // app.post('/noticia', function(req, res) {
-    //     var connection = app.config.dbConnection();
-    //     var noticiasModel = app.app.models.noticiasModel;
-
-    //     noticiasModel.getNoticias(connection, function(error, result) {
-
-    //         res.render('noticias/noticia', { noticias: result });
-    //     })
-    // })
-
-
-
-
 }
